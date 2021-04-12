@@ -7,7 +7,7 @@ const Logo = () => {
 
   const changeDropdown = () => {
     setDropdownOpen(!dropdownOpen);
-  }
+  };
 
   return (
     <div>
