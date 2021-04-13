@@ -1,13 +1,58 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './catalog.css';
+require('dotenv').config()
+
+const query = `
+{
+  itemCollection {
+    items {
+      title
+      description
+      price
+      dimensions
+    }
+  }
+}
+`;
+
+const space = process.env.REACT_APP_SPACE;
+const cdAccess = process.env.REACT_APP_CD_ACCESS;
 
 const Catalog = () => {
+  const [items, setItems] = useState([]);
+
+  const item = async () => {
+    const data = await fetch(`https://graphql.contentful.com/content/v1/spaces/${space}/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        // Authenticate the request
+        Authorization: `Bearer ${cdAccess}`,
+      },
+      // send the GraphQL query
+      body: JSON.stringify({ query }),
+    });
+    const item = await data.json();
+    console.log(item);
+    setItems(item.data.itemCollection.items);
+  };
+
+  useEffect(() => {
+    item();
+  }, []);
+
+  if (!items) {
+    return "Loading...";
+  }
+  
   return (
     <div className="catalog-border">
       <h1>Catalog items</h1>
-      <p>Title</p>
-      <p>Description</p>
-      <p>Contact to buy</p>
+      <p>{items[0].title}</p>
+      <p>{items[0].dimensions}</p>
+      <p>{items[0].description}</p>
+      <p>{items[0].price} SEK</p>
+      <button>Request to buy</button>
     </div>
   )
 }
