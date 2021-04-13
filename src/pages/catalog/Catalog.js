@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './catalog.css';
-require('dotenv').config()
+
+require('dotenv').config();
 
 const query = `
 {
@@ -33,11 +34,11 @@ const cdAccess = process.env.REACT_APP_CD_ACCESS;
 const Catalog = () => {
   const [items, setItems] = useState([]);
 
-  const item = async () => {
+  const itemData = async () => {
     const data = await fetch(`https://graphql.contentful.com/content/v1/spaces/${space}/`, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
         // Authenticate the request
         Authorization: `Bearer ${cdAccess}`,
       },
@@ -50,24 +51,26 @@ const Catalog = () => {
   };
 
   useEffect(() => {
-    item();
+    itemData();
   }, []);
 
   if (!items) {
-    return "Loading...";
+    return 'Loading...';
   }
-  
+
   return (
     <div className="catalog-border">
       <h1>Catalog items</h1>
-      <img className="catalog-img" src={items[0].imageCollection.items[0].url} alt={items[0].imageCollection.items[0].title}/>
+      <img className="catalog-img"
+      src={items[0].imageCollection.items[0].url}
+      alt={items[0].imageCollection.items[0].title}/>
       <p>{items[0].title}</p>
       <p>{items[0].dimensions}</p>
       <p>{items[0].description}</p>
       <p>{items[0].price} SEK</p>
       <button>Request to buy</button>
     </div>
-  )
-}
+  );
+};
 
-export default Catalog
+export default Catalog;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import ModalDropdown from '../modalDropdown/ModalDropdown.js';
 import { Link } from 'react-router-dom';
+import ModalDropdown from '../modalDropdown/ModalDropdown';
 
 const Logo = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -31,7 +31,7 @@ const Logo = () => {
         </ul>
       </ModalDropdown>
     </div>
-  )
-}
+  );
+};
 
 export default Logo;
