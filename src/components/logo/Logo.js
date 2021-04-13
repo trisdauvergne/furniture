@@ -12,6 +12,7 @@ const Logo = () => {
   return (
     <div>
       <h1>Brand</h1>
+      <p>Testing if netlify updates</p>
       <button onClick={changeDropdown}>Dropdown</button>
       <ModalDropdown open={dropdownOpen} onClose={() => setDropdownOpen(false)}>
         <ul>
