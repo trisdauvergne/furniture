@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import Item from '../../components/item/Item';
 import './catalog.css';
 
@@ -52,7 +53,7 @@ const Catalog = () => {
       body: JSON.stringify({ query }),
     });
     const item = await data.json();
-    await setPieces(item.data.itemCollection.items);
+    setPieces(item.data.itemCollection.items);
   };
 
   useEffect(() => {
@@ -66,7 +67,7 @@ const Catalog = () => {
   return (
     <div className="catalog-border">
       <h1>Catalog items</h1>
-      {pieces.map((piece, index) => <Item key={index} piece={piece}/>)}
+      {pieces.map(piece => <Item key={uuidv4()} piece={piece}/>)}
     </div>
   );
 };
