@@ -39,7 +39,6 @@
     ]
   },
   "devDependencies": {
-    "eslint-config-salt": "^1.1.0",
     "nodemon": "^2.0.7",
     "webpack": "^4.44.2",
     "webpack-cli": "^4.6.0"

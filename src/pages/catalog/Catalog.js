@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Item from '../../components/item/Item';
 import './catalog.css';
 
 require('dotenv').config();
@@ -11,6 +12,11 @@ const query = `
       dimensions
       price
       description
+      contentfulMetadata {
+        tags {
+          name
+        }
+      }
       imageCollection {
         items {
           title
@@ -32,7 +38,7 @@ const space = process.env.REACT_APP_SPACE;
 const cdAccess = process.env.REACT_APP_CD_ACCESS;
 
 const Catalog = () => {
-  const [items, setItems] = useState([]);
+  const [pieces, setPieces] = useState(null);
 
   const itemData = async () => {
     const data = await fetch(`https://graphql.contentful.com/content/v1/spaces/${space}/`, {
@@ -46,29 +52,21 @@ const Catalog = () => {
       body: JSON.stringify({ query }),
     });
     const item = await data.json();
-    console.log(item);
-    setItems(item.data.itemCollection.items);
+    await setPieces(item.data.itemCollection.items);
   };
 
   useEffect(() => {
     itemData();
   }, []);
 
-  if (!items) {
+  if (!pieces) {
     return 'Loading...';
   }
 
   return (
     <div className="catalog-border">
       <h1>Catalog items</h1>
-      <img className="catalog-img"
-      src={items[0].imageCollection.items[0].url}
-      alt={items[0].imageCollection.items[0].title}/>
-      <p>{items[0].title}</p>
-      <p>{items[0].dimensions}</p>
-      <p>{items[0].description}</p>
-      <p>{items[0].price} SEK</p>
-      <button>Request to buy</button>
+      {pieces.map((piece, index) => <Item key={index} piece={piece}/>)}
     </div>
   );
 };
