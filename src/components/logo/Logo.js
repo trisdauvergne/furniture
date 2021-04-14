@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ModalDropdown from '../modalDropdown/ModalDropdown';
 import { Link } from 'react-router-dom';
+import './logo.css';
 
 const Logo = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -10,27 +11,26 @@ const Logo = () => {
   };
 
   return (
-    <div>
-      <h1>Brand</h1>
-      <p>Testing if netlify updates</p>
-      <button onClick={changeDropdown}>Dropdown</button>
+    <nav className="nav">
+      <h1 className="nav__logo">Brand name</h1>
+      <button  className="btn nav__btn" onClick={changeDropdown}>Menu</button>
       <ModalDropdown open={dropdownOpen} onClose={() => setDropdownOpen(false)}>
-        <ul>
+        <div className="nav__menu">
           <Link to="/about">
-            <li onClick={changeDropdown}>About</li>
+            <button className="btn" onClick={changeDropdown}>About</button>
           </Link>
           <Link to="/catalog">
-            <li onClick={changeDropdown}>Catalog</li>
+            <button className="btn" onClick={changeDropdown}>Catalog</button>
           </Link>
           <Link to="/commissions">
-            <li onClick={changeDropdown}>Commissions</li>
+            <button className="btn" onClick={changeDropdown}>Commissions</button>
           </Link>
           <Link to="/contact">
-            <li onClick={changeDropdown}>Contact</li>
+            <button className="btn" onClick={changeDropdown}>Contact</button>
           </Link>
-        </ul>
+        </div>
       </ModalDropdown>
-    </div>
+    </nav>
   )
 }
 

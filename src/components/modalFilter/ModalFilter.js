@@ -10,7 +10,7 @@ const ModalFilter = ({ onClose, open, children }) => {
     <div className="dropdown-overlay" />
       <div className="dropdown-modal">
         {children}
-        <button onClick={onClose}>Close from the filter</button>
+        <button className="btn" onClick={onClose}>Close from the filter</button>
       </div>
     </>,
     document.getElementById('portal'),

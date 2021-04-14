@@ -1,6 +1,21 @@
-.testing {
-  color: red;
-  background-color: yellow;
+.filter {
+  display: flex;
+  margin: 0 0 1rem 1rem;
+}
+
+.filter__btn {
+  margin-bottom: 1rem;
+}
+
+.filter__filter-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 1rem;
   z-index: 1000;
   position: absolute;
+}
+
+.filter__btn--bold {
+  font-weight: bold;
 }

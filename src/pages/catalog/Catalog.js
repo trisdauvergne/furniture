@@ -67,11 +67,13 @@ const Catalog = () => {
   }
 
   return (
-    <div className="catalog-border">
-      <Filter />
-      <h1>Catalog items</h1>
+    <section className="catalog">
+      <div className="catalog__header">
+        <h3 className="catalog__header--h3">Catalog items</h3>
+        <Filter />
+      </div>
       {pieces.map(piece => <Item key={uuidv4()} piece={piece}/>)}
-    </div>
+    </section>
   );
 };
 

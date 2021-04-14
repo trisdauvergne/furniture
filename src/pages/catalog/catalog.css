@@ -1,7 +1,14 @@
-.catalog-border {
-  border: 1px dashed green;
+.catalog {
+  display: flex;
+  flex-direction: column;
 }
 
-.catalog-img {
-  width: 150px;
+.catalog__header {
+  position: sticky;
+  /* margin: auto; */
+  top: 5rem;
+}
+
+.catalog__header--h3 {
+  margin: 0 0 1rem 1rem;
 }
