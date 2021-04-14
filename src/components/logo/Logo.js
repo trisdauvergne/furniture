@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ModalDropdown from '../modalDropdown/ModalDropdown.js';
+import ModalDropdown from '../modalDropdown/ModalDropdown';
 import { Link } from 'react-router-dom';
 
 const Logo = () => {

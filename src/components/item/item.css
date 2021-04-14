@@ -1,0 +1,14 @@
+.item-border {
+  border: dashed 1px orange;
+}
+
+.item-imgs {
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.catalog-img {
+  padding: 50px;
+}

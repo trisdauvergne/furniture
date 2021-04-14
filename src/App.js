@@ -1,14 +1,14 @@
 import './App.css';
-import Logo from './components/logo/Logo.js';
-import About from './pages/about/About.js';
-import Catalog from './pages/catalog/Catalog.js';
-import Commission from './pages/commission/Commission.js';
-import Contact from './pages/contact/Contact.js';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Logo from './components/logo/Logo';
+import About from './pages/about/About';
+import Catalog from './pages/catalog/Catalog';
+import Commission from './pages/commission/Commission';
+import Contact from './pages/contact/Contact';
 
 function App() {
   return (
-    <Router >
+    <Router>
       <div className="App">
         <Logo />
         <Switch>
