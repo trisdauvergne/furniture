@@ -3,8 +3,8 @@ import { v4 as uuidv4 } from 'uuid';
 import './item.css';
 
 const Item = ({ piece }) => {
-  // const imgId = uuidv4();
-  // console.log(imgId, 'in Item component');
+
+  console.log(piece);
 
   return (
     <div className="item-border">

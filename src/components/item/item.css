@@ -8,3 +8,7 @@
   overflow-y: hidden;
   white-space: nowrap;
 }
+
+.catalog-img {
+  padding: 50px;
+}

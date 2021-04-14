@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Item from '../../components/item/Item';
+import Filter from '../../components/filter/Filter';
 import './catalog.css';
 
 require('dotenv').config();
@@ -66,6 +67,7 @@ const Catalog = () => {
 
   return (
     <div className="catalog-border">
+      <Filter />
       <h1>Catalog items</h1>
       {pieces.map(piece => <Item key={uuidv4()} piece={piece}/>)}
     </div>
