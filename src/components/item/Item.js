@@ -18,7 +18,7 @@ const Item = ({ piece }) => {
       <p>{piece.dimensions}</p>
       <p>{piece.description}</p>
       <p>{piece.price} SEK</p>
-      <button>Request to buy</button>
+      <button className="btn">Request to buy</button>
     </div>
   );
 };

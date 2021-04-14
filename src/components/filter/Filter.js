@@ -17,9 +17,8 @@ const Filter = () => {
   }
 
   return (
-    <div>
-      <h4>Filter Items</h4>
-      <button onClick={() => setVisibleFilter(!visibleFilter)}>Filter Items</button>
+    <section className="filter">
+      <button className="btn" onClick={() => setVisibleFilter(!visibleFilter)}>Filter Items</button>
       <div className="testing">
         {visibleFilter && <ul>
           <li onClick={changeFilter}>All</li>
@@ -41,7 +40,7 @@ const Filter = () => {
           <li>Storage</li>
         </ul>
       </ModalFilter> */}
-    </div>
+    </section>
   )
 }
 

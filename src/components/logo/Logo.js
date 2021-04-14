@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ModalDropdown from '../modalDropdown/ModalDropdown';
 import { Link } from 'react-router-dom';
+import './logo.css';
 
 const Logo = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -10,10 +11,9 @@ const Logo = () => {
   };
 
   return (
-    <div>
-      <h1>Brand</h1>
-      <p>Testing if netlify updates</p>
-      <button onClick={changeDropdown}>Dropdown</button>
+    <nav className="nav">
+      <h1 className="nav-logo">Brand name</h1>
+      <button  className="btn nav-btn" onClick={changeDropdown}>More</button>
       <ModalDropdown open={dropdownOpen} onClose={() => setDropdownOpen(false)}>
         <ul>
           <Link to="/about">
@@ -30,7 +30,7 @@ const Logo = () => {
           </Link>
         </ul>
       </ModalDropdown>
-    </div>
+    </nav>
   )
 }
 
