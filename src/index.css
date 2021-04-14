@@ -19,15 +19,17 @@
   padding: 0;
 }
 
-p, h3 {
-  font-family: 'Barlow', sans-serif;
-}
-
 h1 {
   font-family: 'Inter', sans-serif;
 }
 
+p, h3, .btn {
+  font-family: 'Barlow', sans-serif;
+}
+
+
 .btn {
   border: none;
   background: none;
+  outline: none;
 }

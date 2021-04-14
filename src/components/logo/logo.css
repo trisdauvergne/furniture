@@ -3,17 +3,23 @@
   top: 0;
   display: flex;
   height: 4rem;
-  align-items: center;
+  align-items: flex-end;
   /* background-color: white; */
 }
 
-.nav-logo {
+.nav__logo {
   font-size: 2.25rem;
-  margin: auto;
+  margin-left: 1rem;
 }
 
-.nav-btn {
+.nav__btn {
   position: fixed;
   right: 0;
-  margin-right: 10px;
+  margin-right: 1rem;
+  padding-bottom: 5px;
+}
+
+.nav__menu {
+  display: flex;
+  flex-direction: column;
 }

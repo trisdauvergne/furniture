@@ -5,10 +5,10 @@
 
 .catalog__header {
   position: sticky;
-  margin: auto;
-  top: 4rem;
+  /* margin: auto; */
+  top: 5rem;
 }
 
 .catalog__header--h3 {
-  margin-bottom: 1rem;
+  margin: 0 0 1rem 1rem;
 }

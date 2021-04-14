@@ -1,13 +1,21 @@
 .filter {
   display: flex;
-  margin: auto;
-  margin-bottom: 1rem;
-  justify-content: space-around;
+  margin: 0 0 1rem 1rem;
 }
 
-.testing {
-  color: red;
-  background-color: yellow;
+.filter__btn {
+  margin-bottom: 1rem;
+}
+
+.filter__filter-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 1rem;
   z-index: 1000;
   position: absolute;
+}
+
+.filter__btn--bold {
+  font-weight: bold;
 }

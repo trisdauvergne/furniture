@@ -8,10 +8,12 @@ const ModalDropdown = ({ onClose, open, children }) => {
   return ReactDom.createPortal(
     <>
     <div className="dropdown-overlay" />
-      <div className="dropdown-modal">
-        {children}
-        <button className="btn" onClick={onClose}>Close from the dropdown</button>
-      </div>
+    <div className="dropdown-modal__btn-div">
+      <button className="btn dropdown-modal__btn" onClick={onClose}>X</button>
+    </div>
+    <div className="dropdown-modal">
+      {children}
+    </div>
     </>,
     document.getElementById('portal'),
   )
