@@ -36,19 +36,20 @@ const query = `
 }
 `;
 
-const space = process.env.REACT_APP_SPACE;
-const cdAccess = process.env.REACT_APP_CD_ACCESS;
+const SPACE_ID = process.env.REACT_APP_SPACE_ID;
+const ACCESS_TOKEN = process.env.REACT_APP_ACCESS_TOKEN;
 
 const Catalog = () => {
+  console.log(process.env);
   const [pieces, setPieces] = useState(null);
 
   const itemData = async () => {
-    const data = await fetch(`https://graphql.contentful.com/content/v1/spaces/${space}/`, {
+    const data = await fetch(`https://graphql.contentful.com/content/v1/spaces/${SPACE_ID}/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         // Authenticate the request
-        Authorization: `Bearer ${cdAccess}`,
+        Authorization: `Bearer ${ACCESS_TOKEN}`,
       },
       // send the GraphQL query
       body: JSON.stringify({ query }),
