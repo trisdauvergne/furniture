@@ -1,7 +1,3 @@
-.item-border {
-  border: dashed 1px orange;
-}
-
 .item-imgs {
   display: flex;
   overflow-x: scroll;
@@ -9,6 +5,26 @@
   white-space: nowrap;
 }
 
-.catalog-img {
-  padding: 50px;
+.item-img {
+  width: 80%;
+  padding: 0 50px;
+  margin-bottom: 1rem;
+}
+
+.item-txt {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  margin: 0 2rem 3rem 2rem;
+}
+
+.item-txt__p {
+  font-size: 9px;
+}
+
+.item-txt__btn {
+  font-size: 9px;
+  font-weight: bold;
+  text-align: right;
+  outline: none;
 }

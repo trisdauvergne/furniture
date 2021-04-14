@@ -1,6 +1,7 @@
 .filter {
   display: flex;
   margin: auto;
+  margin-bottom: 1rem;
   justify-content: space-around;
 }
 

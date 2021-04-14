@@ -18,7 +18,7 @@ const Filter = () => {
 
   return (
     <section className="filter">
-      <button className="btn" onClick={() => setVisibleFilter(!visibleFilter)}>Filter Items</button>
+      <button className="btn filter__btn" onClick={() => setVisibleFilter(!visibleFilter)}>Filter Items</button>
       <div className="testing">
         {visibleFilter && <ul>
           <li onClick={changeFilter}>All</li>
