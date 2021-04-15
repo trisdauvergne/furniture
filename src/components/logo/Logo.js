@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ModalDropdown from '../modalDropdown/ModalDropdown';
 import { Link } from 'react-router-dom';
 import './logo.css';
@@ -10,10 +10,12 @@ const Logo = () => {
     setDropdownOpen(!dropdownOpen);
   };
 
+  // something with window.addEventListener for hiding the modal when somewhere else is clicked
+
   return (
     <nav className="nav">
       <h1 className="nav__logo">Brand name</h1>
-      <button  className="btn nav__btn" onClick={changeDropdown}>Menu</button>
+      {!dropdownOpen && <button  className="btn nav__btn" onClick={changeDropdown}>Menu</button>}
       <ModalDropdown open={dropdownOpen} onClose={() => setDropdownOpen(false)}>
         <div className="nav__menu">
           <Link to="/about">

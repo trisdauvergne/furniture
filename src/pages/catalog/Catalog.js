@@ -40,7 +40,6 @@ const SPACE_ID = process.env.REACT_APP_SPACE_ID;
 const ACCESS_TOKEN = process.env.REACT_APP_ACCESS_TOKEN;
 
 const Catalog = () => {
-  console.log(process.env);
   const [pieces, setPieces] = useState(null);
 
   const itemData = async () => {
@@ -70,7 +69,7 @@ const Catalog = () => {
     <section className="catalog">
       <div className="catalog__header">
         <h3 className="catalog__header--h3">Catalog items</h3>
-        <Filter />
+        <Filter pieces={pieces}/>
       </div>
       {pieces.map(piece => <Item key={uuidv4()} piece={piece}/>)}
     </section>
@@ -78,3 +77,4 @@ const Catalog = () => {
 };
 
 export default Catalog;
+
