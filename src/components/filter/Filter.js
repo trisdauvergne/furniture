@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './filter.css'
 
 const Filter = ({ pieces }) => {
   const [visibleFilter, setVisibleFilter] = useState(false);
   const [tags, setTags] = useState([]);
+  const [filterText, setFilterText] = useState(null);
 
-  const changeFilter = () => {
+  const filterBtnFunctions = (e) => {
+    setFilterText(e.target.innerText);
     setVisibleFilter(!visibleFilter);
   }
 
   const getTags = () => {
     const tagsArray = pieces.map(piece => piece.contentfulMetadata.tags[0].name);
     setTags(tagsArray.filter((item, index) => tagsArray.indexOf(item) === index));
-    console.log(tags);
   }
 
   useEffect(() => {
@@ -23,7 +25,7 @@ const Filter = ({ pieces }) => {
     <section className="filter">
       <button className={visibleFilter ? 'btn filter__btn filter__btn--bold' : 'btn filter__btn'} onClick={() => setVisibleFilter(!visibleFilter)}>Filter</button>
       <div className="filter__filter-list">
-        {visibleFilter && tags.map((tag, index) => <button className="btn" key={index}>{tag.charAt(0).toUpperCase() + tag.slice(1)}</button>)}
+        {visibleFilter && tags.map((tag, index) => <Link to="/catalog/filtered"><button className="btn" onClick={filterBtnFunctions} key={index}>{tag.charAt(0).toUpperCase() + tag.slice(1)}</button></Link>)}
       </div>
     </section>
   )
