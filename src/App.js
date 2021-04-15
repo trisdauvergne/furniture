@@ -6,20 +6,24 @@ import About from './pages/about/About';
 import Catalog from './pages/catalog/Catalog';
 import Commission from './pages/commission/Commission';
 import Contact from './pages/contact/Contact';
+// import { ItemsProvider } from './ItemsContext';
+
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Logo />
-        <Switch>
-          <Route path="/about" component={About} />
-          <Route path="/catalog" exact component={Catalog} />
-          <Route path="/catalog/filtered" component={Filtered} />
-          <Route path="/commissions" component={Commission} />
-          <Route path="/contact" component={Contact} />
-        </Switch>
-      </div>
+      {/* <ItemsProvider> */}
+        <div className="App">
+          <Logo />
+          <Switch>
+            <Route path="/about" component={About} />
+            <Route path="/catalog" exact component={Catalog} />
+            <Route path="/catalog/filtered" component={Filtered} />
+            <Route path="/commissions" component={Commission} />
+            <Route path="/contact" component={Contact} />
+          </Switch>
+        </div>
+      {/* </ItemsProvider> */}
     </Router>
   );
 }
