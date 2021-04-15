@@ -1,18 +1,18 @@
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Logo from './components/logo/Logo';
-import Filtered from './components/filtered/Filtered';
+import { Logo } from './components/logo/Logo';
+import Filtered from './pages/filtered/Filtered';
 import About from './pages/about/About';
 import Catalog from './pages/catalog/Catalog';
 import Commission from './pages/commission/Commission';
 import Contact from './pages/contact/Contact';
-// import { ItemsProvider } from './ItemsContext';
+import { ItemsProvider } from './components/logo/Logo';
 
 
 function App() {
   return (
     <Router>
-      {/* <ItemsProvider> */}
+      <ItemsProvider>
         <div className="App">
           <Logo />
           <Switch>
@@ -23,7 +23,7 @@ function App() {
             <Route path="/contact" component={Contact} />
           </Switch>
         </div>
-      {/* </ItemsProvider> */}
+      </ItemsProvider>
     </Router>
   );
 }
