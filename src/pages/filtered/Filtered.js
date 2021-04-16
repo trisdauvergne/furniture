@@ -4,14 +4,13 @@ import { v4 as uuidv4 } from 'uuid';
 import Item from '../../components/item/Item';
 import { Filter } from '../../components/filter/Filter';
 import { ItemsContext } from '../../components/logo/Logo';
+import './filtered.css';
 
 const Filtered = () => {
   const match = useRouteMatch();
   const [filteredPieces, setFilteredPieces] = useState([]);
   const pieces = useContext(ItemsContext);
   const filterWord = match.params.tag;
-
-  console.log(filterWord);
 
   const filterFunction = () => {
     if (pieces) {
@@ -23,16 +22,20 @@ const Filtered = () => {
     filterFunction();
   }, []);
 
+  console.log(window);
+
   if (!pieces) {
     return 'Loading...';
   }
 
   return (
-    <div>
-      <h1>Filtered Page</h1>
-      <Filter pieces={pieces}/>
+    <section className="filtered">
+      <div className="filtered__header">
+        <h3 className="filtered__header--h3">{filterWord.charAt(0).toUpperCase() + filterWord.slice(1)}</h3>
+        <Filter pieces={pieces}/>
+      </div>
       {filteredPieces.map(piece => <Item key={uuidv4()} piece={piece}/>)}
-    </div>
+    </section>
   )
 }
 

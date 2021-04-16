@@ -1,0 +1,14 @@
+.filtered {
+  display: flex;
+  flex-direction: column;
+}
+
+.filtered__header {
+  position: sticky;
+  /* margin: auto; */
+  top: 5rem;
+}
+
+.filtered__header--h3 {
+  margin: 0 0 1rem 1rem;
+}
