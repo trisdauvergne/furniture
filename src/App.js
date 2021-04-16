@@ -18,7 +18,7 @@ function App() {
           <Switch>
             <Route path="/about" component={About} />
             <Route path="/catalog" exact component={Catalog} />
-            <Route path="/catalog/filtered" component={Filtered} />
+            <Route path={`/catalog/:tag`} component={Filtered} />
             <Route path="/commissions" component={Commission} />
             <Route path="/contact" component={Contact} />
           </Switch>

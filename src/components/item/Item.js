@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import './item.css';
 
 const Item = ({ piece }) => {
-  console.log(piece);
+  // console.log(piece);
 
   const [descriptionVisible, setDescriptionVisible] = useState(false);
 

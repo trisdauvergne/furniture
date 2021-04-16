@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { ItemsContext } from '../../components/logo/Logo';
 import { v4 as uuidv4 } from 'uuid';
 import Item from '../../components/item/Item';
-import Filter from '../../components/filter/Filter';
+import { Filter } from '../../components/filter/Filter';
 import './catalog.css';
 
 const Catalog = () => {
