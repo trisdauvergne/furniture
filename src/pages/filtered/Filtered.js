@@ -5,30 +5,29 @@ import Filter from '../../components/filter/Filter';
 import { ItemsContext } from '../../components/logo/Logo';
 
 const Filtered = () => {
+  const [filteredPieces, setFilteredPieces] = useState([]);
   const pieces = useContext(ItemsContext);
-  console.log(pieces);
+  const filterWord = 'tables';
 
-  // const [filtered, setFiltered] = useState([]);
+  const filterFunction = () => {
+    if (pieces) {
+      setFilteredPieces(pieces.filter(piece => piece.contentfulMetadata.tags[0].name === filterWord));
+    }
+  }
 
-  // const filterItems = () => {
-  //   const filteredItems = values.filter(item => item.contentfulMetadata.tags[0].name === 'tables');
-  //   setFiltered(filteredItems);
-  // }
+  useEffect(() => {
+    filterFunction();
+  }, []);
 
-  // useEffect(() => {
-  //   filterItems();
-  // }, []);
-
-  // useEffect(() => {
-  //   console.log('filtered');
-  //   console.log(filtered);
-  // }, [filtered])
-
+  if (!pieces) {
+    return 'Loading...';
+  }
+  
   return (
     <div>
       <h1>Filtered Page</h1>
       <Filter pieces={pieces}/>
-      {pieces.map(piece => <Item key={uuidv4()} piece={piece}/>)}
+      {filteredPieces.map(piece => <Item key={uuidv4()} piece={piece}/>)}
     </div>
   )
 }

@@ -8,6 +8,10 @@ import './catalog.css';
 const Catalog = () => {
   const pieces = useContext(ItemsContext);
 
+  if (!pieces) {
+    return 'Loading...';
+  }
+
   return (
     <section className="catalog">
       <div className="catalog__header">
