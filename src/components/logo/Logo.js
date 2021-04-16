@@ -48,7 +48,7 @@ export const Logo = () => {
   // something with window.addEventListener for hiding the modal when somewhere else is clicked
 
   return (
-    <nav className="nav">
+    <nav className="nav" onMouseLeave={() => setDropdownOpen(false)}>
       <h1 className="nav__logo">Brand name</h1>
       {!dropdownOpen && <button  className="btn nav__btn" onClick={changeDropdown}>Menu</button>}
       <ModalDropdown open={dropdownOpen} onClose={() => setDropdownOpen(false)}>
