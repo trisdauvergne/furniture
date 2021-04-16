@@ -28,6 +28,7 @@ export const Filter = ({ pieces }) => {
     <section className="filter">
       <button className={visibleFilter ? 'btn filter__btn filter__btn--bold' : 'btn filter__btn'} onClick={() => setVisibleFilter(!visibleFilter)}>Filter</button>
       <div className="filter__filter-list">
+        {visibleFilter && <Link to="/catalog"><button className="btn" onClick={() => setVisibleFilter(false)}>All</button></Link>}
         {visibleFilter && tags.map(tag => <Link to={`/catalog/${filterText}`}><button key={uuidv4()} className="btn" onClick={filterBtnFunctions}>{tag.charAt(0).toUpperCase() + tag.slice(1)}</button></Link>)}
       </div>
     </section>
