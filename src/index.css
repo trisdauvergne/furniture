@@ -27,6 +27,10 @@ p, h3, .btn {
   font-family: 'Barlow', sans-serif;
 }
 
+p, .btn {
+  font-size: 16px;
+}
+
 
 .btn {
   border: none;
