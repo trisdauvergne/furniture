@@ -1,12 +1,12 @@
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Logo } from './components/logo/Logo';
+import { Logo, ItemsProvider } from './components/logo/Logo';
 import Filtered from './pages/filtered/Filtered';
 import About from './pages/about/About';
 import Catalog from './pages/catalog/Catalog';
 import Commission from './pages/commission/Commission';
 import Contact from './pages/contact/Contact';
-import { ItemsProvider } from './components/logo/Logo';
+// import { ItemsProvider } from './components/logo/Logo';
 
 
 function App() {
