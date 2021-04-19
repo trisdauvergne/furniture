@@ -1,3 +1,13 @@
-.about-border {
-  border: 1px dashed blue;
+.about {
+  margin-top: 1rem;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  /* height: 50vh; */
+  background-color: rgba(170, 164, 157, 0.6);
+}
+
+.about__txt {
+  padding: 1rem 1rem;
+  /* text-align: justify; */
 }
