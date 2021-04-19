@@ -44,11 +44,7 @@ export const Logo = () => {
   const changeDropdown = () => {
     setDropdownOpen(!dropdownOpen);
   };
-
-  const test = () => {
-    console.log('clicked nav');
-  }
-
+  
   return (
     <nav className="nav">
       <h1 className="nav__logo">Brand name</h1>

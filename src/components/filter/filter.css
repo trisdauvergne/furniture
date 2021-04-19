@@ -1,6 +1,5 @@
 .filter {
-  display: flex;
-  margin: 0 0 1rem 1rem;
+  margin-bottom: 1rem;
 }
 
 .filter__btn {
@@ -18,4 +17,11 @@
 
 .filter__btn--bold {
   font-weight: bold;
+}
+
+@media only screen and (max-width: 1024px) {
+  .filter {
+    display: flex;
+    margin: 0 0 1rem 1rem;
+  }
 }

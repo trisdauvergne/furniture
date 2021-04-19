@@ -36,3 +36,8 @@ p, .btn {
   background: none;
   outline: none;
 }
+
+body {
+  margin: auto;
+  max-width: 1024px;
+}

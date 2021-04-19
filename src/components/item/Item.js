@@ -12,8 +12,7 @@ const Item = ({ piece }) => {
   }
 
   return (
-    <section className="item">
-      {/* <h3>List Item</h3> */}
+    <section className="item" onMouseLeave={() => setDescriptionVisible(false)}>
       <div className="item-imgs">
         {piece.imageCollection.items.map(image => <img key={uuidv4()}className="item-img"
         src={image.url}
@@ -23,9 +22,8 @@ const Item = ({ piece }) => {
         <p className="item-txt__p">{piece.title}</p>
         <p className="item-txt__p">{piece.dimensions}</p>
         <p className="item-txt__p">{piece.price} SEK</p>
-        <button onClick={toggleDescriptionVisible} className="btn item-txt__btn">Read more</button>
+        <button onClick={(toggleDescriptionVisible)} className="btn item-txt__btn">Read more</button>
         {descriptionVisible && <p className="item-txt__p">{piece.description}</p>}
-        {/* <button className="btn">Request to buy</button> */}
       </div>
     </section>
   );
