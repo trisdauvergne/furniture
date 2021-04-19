@@ -6,16 +6,17 @@
 }
 
 .item-img {
-  width: 80%;
-  padding: 0 50px;
-  margin-bottom: 1rem;
+  width: 15rem;
+  height: 20rem;
+  object-fit: cover;
+  margin: 0 1rem 1rem 0;
 }
 
 .item-txt {
   display: flex;
   flex-direction: column;
   text-align: right;
-  margin: 0 2rem 3rem 2rem;
+  margin: 0 1rem 3rem 2rem;
 }
 
 .item-txt__p {
