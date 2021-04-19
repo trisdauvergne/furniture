@@ -22,7 +22,7 @@ const Filtered = () => {
     filterFunction();
   }, []);
 
-  console.log(window);
+  // console.log(window);
 
   if (!pieces) {
     return 'Loading...';

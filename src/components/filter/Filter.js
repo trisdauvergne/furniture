@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
 import './filter.css';
@@ -9,10 +9,21 @@ export const Filter = ({ pieces }) => {
   const [tags, setTags] = useState([]);
   const [filterText, setFilterText] = useState('');
 
+  let history = useHistory();
+  let location = useLocation();
+
   const filterBtnFunctions = (e) => {
     const tag = e.target.innerText.toLowerCase();
     setFilterText(tag);
     setVisibleFilter(!visibleFilter);
+    // history.push(`catalog/${tag}`);
+    // console.log(window.location);
+    const regex = /catalog\//;
+    if (regex.test(window.location.pathname)) {
+      history.push(`${tag}`);
+    } else {
+      history.replace(`catalog/${tag}`);
+    }
   }
 
   const getTags = () => {
@@ -29,7 +40,8 @@ export const Filter = ({ pieces }) => {
       <button className={visibleFilter ? 'btn filter__btn filter__btn--bold' : 'btn filter__btn'} onClick={() => setVisibleFilter(true)}>Filter</button>
       <div className="filter__filter-list">
         {visibleFilter && <Link to="/catalog"><button className="btn" onClick={() => setVisibleFilter(false)}>All</button></Link>}
-        {visibleFilter && tags.map(tag => <Link to={`/catalog/${filterText}`}><button key={uuidv4()} className="btn" onClick={filterBtnFunctions}>{tag.charAt(0).toUpperCase() + tag.slice(1)}</button></Link>)}
+        {/* {visibleFilter && tags.map(tag => <Link to={`/catalog/${filterText}`}><button key={uuidv4()} className="btn" onClick={filterBtnFunctions}>{tag.charAt(0).toUpperCase() + tag.slice(1)}</button></Link>)} */}
+        {visibleFilter && tags.map(tag => <button key={uuidv4()} className="btn" onClick={filterBtnFunctions}>{tag.charAt(0).toUpperCase() + tag.slice(1)}</button>)}
       </div>
     </section>
   )
