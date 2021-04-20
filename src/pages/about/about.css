@@ -8,6 +8,7 @@
 }
 
 .about__txt {
+  margin: auto;
   padding: 1rem 1rem;
-  /* text-align: justify; */
+  max-width: 425px;
 }
