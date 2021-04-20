@@ -23,7 +23,7 @@ const Item = ({ piece }) => {
         <p className="item-txt__p">{piece.dimensions}</p>
         <p className="item-txt__p">{piece.price} SEK</p>
         <button onClick={(toggleDescriptionVisible)} className="btn item-txt__btn">Read more</button>
-        {descriptionVisible && <p className="item-txt__p">{piece.description}</p>}
+        {descriptionVisible && <p className="item-txt__p item-txt__description">{piece.description}</p>}
       </div>
     </section>
   );

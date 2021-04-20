@@ -46,8 +46,20 @@ export const Logo = () => {
   };
   
   return (
-    <nav className="nav">
+    <nav className="nav nav--wide">
+      <Link to="/about">
+        <button className="btn btn--lrg-screen">About</button>
+      </Link>
+      <Link to="/catalog">
+        <button className="btn btn--lrg-screen">Catalog</button>
+      </Link>
       <h1 className="nav__logo">Brand name</h1>
+      <Link to="/commissions">
+        <button className="btn btn--lrg-screen">Commissions</button>
+      </Link>
+      <Link to="/contact">
+        <button className="btn btn--lrg-screen">Contact</button>
+      </Link>
       <button className={dropdownOpen ? 'btn nav__btn nav__btn--bold' : 'btn nav__btn'} onClick={changeDropdown}>Menu</button>
       <div className="nav__menu">
       {dropdownOpen && <>
