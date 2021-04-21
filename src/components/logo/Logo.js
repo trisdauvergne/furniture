@@ -47,19 +47,23 @@ export const Logo = () => {
   
   return (
     <nav className="nav nav--wide">
-      <Link to="/about">
-        <button className="btn btn--lrg-screen">About</button>
-      </Link>
-      <Link to="/catalog">
-        <button className="btn btn--lrg-screen">Catalog</button>
-      </Link>
+      {/* <div className="nav-btns--left"> */}
+        <Link to="/about">
+          <button className="btn btn--about btn--lrg-screen">About</button>
+        </Link>
+        <Link to="/catalog">
+          <button className="btn btn--catalog btn--lrg-screen">Catalog</button>
+        </Link>
+      {/* </div> */}
       <h1 className="nav__logo">Brand name</h1>
-      <Link to="/commissions">
-        <button className="btn btn--lrg-screen">Commissions</button>
-      </Link>
-      <Link to="/contact">
-        <button className="btn btn--lrg-screen">Contact</button>
-      </Link>
+      {/* <div className="nav-btns--right"> */}
+        <Link to="/commissions">
+          <button className="btn btn--commissions btn--lrg-screen">Commissions</button>
+        </Link>
+        <Link to="/contact">
+          <button className="btn btn--contact btn--lrg-screen">Contact</button>
+        </Link>
+      {/* </div> */}
       <button className={dropdownOpen ? 'btn nav__btn nav__btn--bold' : 'btn nav__btn'} onClick={changeDropdown}>Menu</button>
       <div className="nav__menu">
       {dropdownOpen && <>

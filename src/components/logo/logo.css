@@ -5,11 +5,32 @@
   height: 4rem;
   align-items: center;
   justify-content: space-evenly;
-  flex-grow: 1;
 }
 
 .nav__logo {
-  font-size: 2.25rem;
+  position: absolute;
+  margin: 0 2rem;
+}
+
+.btn--lrg-screen {
+  position: absolute;
+  top: 22px;
+}
+
+.btn--about {
+  left: 195px;
+}
+
+.btn--catalog {
+  left: 320px;
+}
+
+.btn--commissions {
+  right: 275px;
+}
+
+.btn--contact {
+  right: 150px;
 }
 
 .nav__btn {
@@ -43,6 +64,8 @@
   .nav__logo {
     margin-left: 1rem;
     margin-right: auto;
+    font-size: 2.25rem;
+    position: relative;
   }
 
   .nav__menu {
