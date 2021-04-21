@@ -1,0 +1,8 @@
+.item-img {
+  position: relative;
+  width: 15rem;
+  height: 20rem;
+  object-fit: cover;
+  /* z-index: -1; */
+  /* margin: 0 1rem 1rem 0; */
+}

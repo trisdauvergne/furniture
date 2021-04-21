@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import Image from '../image/Image';
 import './item.css';
 
 const Item = ({ piece }) => {
-  // console.log(piece);
-
   const [descriptionVisible, setDescriptionVisible] = useState(false);
 
   const toggleDescriptionVisible = () => {
@@ -14,9 +13,7 @@ const Item = ({ piece }) => {
   return (
     <section className="item" onMouseLeave={() => setDescriptionVisible(false)}>
       <div className="item-imgs">
-        {piece.imageCollection.items.map(image => <img key={uuidv4()}className="item-img"
-        src={image.url}
-        alt={image.title}/>)}
+        {piece.imageCollection.items.map(image => <article className="item-article" key={uuidv4()}><Image image={image}/></article>)}
       </div>
       <div className="item-txt">
         <p className="item-txt__p">{piece.title}</p>

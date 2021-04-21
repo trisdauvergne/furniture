@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { ItemsContext } from '../../components/logo/Logo';
 import { v4 as uuidv4 } from 'uuid';
 import Item from '../../components/item/Item';
@@ -7,6 +7,7 @@ import './catalog.css';
 
 const Catalog = () => {
   const pieces = useContext(ItemsContext);
+  // const [imgHeight, setImgHeight] = useState('');
 
   if (!pieces) {
     return 'Loading...';
