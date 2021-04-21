@@ -1,5 +1,5 @@
 import React, { useState, createContext, useEffect } from 'react';
-import ModalDropdown from '../modalDropdown/ModalDropdown';
+// import ModalDropdown from '../modalDropdown/ModalDropdown';
 import { Link } from 'react-router-dom';
 import './logo.css';
 
@@ -48,6 +48,10 @@ export const Logo = () => {
   const changeDropdown = () => {
     setDropdownOpen(!dropdownOpen);
   };
+
+  const test = () => {
+    console.log('checking');
+  }
   
   return (
     <nav className="nav nav--wide">
@@ -57,16 +61,18 @@ export const Logo = () => {
       <Link to="/catalog">
         <button onClick={() => setCatalogBold(true)} onMouseLeave={() => setCatalogBold(false)} className={catalogBold ? "btn btn--catalog btn__bold btn--lrg-screen" : "btn btn--catalog btn--lrg-screen"}>Catalog</button>
       </Link>
-      <h1 className="nav__logo">Brand name</h1>
+      <Link to="/"><h1 className="nav__logo">Brand name</h1></Link>
+      {/* <h1 className="nav__logo">Brand name</h1> */}
       <Link to="/commissions">
         <button onClick={() => setCommissionsBold(true)} onMouseLeave={() => setCommissionsBold(false)} className={commissionsBold ?"btn btn__bold btn--commissions btn--lrg-screen" : "btn btn--commissions btn--lrg-screen"}>Commissions</button>
       </Link>
       <Link to="/contact">
         <button onClick={() => setContactBold(true)} onMouseLeave={() => setContactBold(false)} className={contactBold ? "btn btn__bold btn--contact btn--lrg-screen" : "btn btn--contact btn--lrg-screen"}>Contact</button>
       </Link>
-      <button className={dropdownOpen ? 'btn nav__btn nav__btn--bold' : 'btn nav__btn'} onClick={changeDropdown} onMouseLeave={() => setDropdownOpen(false)}>Menu</button>
+      {dropdownOpen ? <button onClick={changeDropdown} className='btn nav__btn nav__btn--bold'>Close</button> : <button className="btn nav__btn" onClick={changeDropdown}>Menu</button>}
       <div className="nav__menu">
-      {dropdownOpen && <>
+      {dropdownOpen &&
+      <>
         <Link to="/about">
           <button className="btn" onClick={changeDropdown}>About</button>
         </Link>
@@ -78,7 +84,8 @@ export const Logo = () => {
         </Link>
         <Link to="/contact">
           <button className="btn" onClick={changeDropdown}>Contact</button>
-        </Link></>}
+        </Link>
+        </>}
       </div>
       {/* {!dropdownOpen && <button  className="btn nav__btn" onClick={changeDropdown}>Menu</button>}
       <ModalDropdown open={dropdownOpen} onClose={() => setDropdownOpen(false)}>

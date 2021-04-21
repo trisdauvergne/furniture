@@ -17,9 +17,9 @@ function App() {
           <Logo />
           <Switch>
           <Route exact path="/"><Redirect to="/about" /></Route>
-            <Route path="/about" exact component={About} />
+            <Route path="/about" component={About} />
             <Route path="/catalog" exact component={Catalog} />
-            <Route path={`/catalog/:tag`} component={Filtered} />
+            <Route path={`/catalog/:tag`} exact component={Filtered} />
             <Route path="/commissions" component={Commission} />
             <Route path="/contact" component={Contact} />
           </Switch>
