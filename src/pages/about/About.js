@@ -6,7 +6,6 @@ import './about.css';
 const About = () => {
   return (
     <section className="about">
-      {/* <h1>About / welcome... </h1> */}
       <div className="about__txt">
         <p><strong>Brand name</strong> is a Stockholm based carpenter that produces unique, handcrafted pieces.</p>
         <br></br>

@@ -33,6 +33,10 @@
   right: 150px;
 }
 
+.btn__bold {
+  font-weight: bolder;
+}
+
 .nav__btn {
   display: none;
 }
@@ -44,7 +48,7 @@
 .nav__menu {
   display: flex;
   flex-direction: column;
-  top: 4rem;
+  top: 3rem;
   text-align: right;
   z-index: 1000;
 }
