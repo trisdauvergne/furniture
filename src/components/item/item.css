@@ -18,7 +18,6 @@
   flex-direction: column;
   text-align: right;
   margin: 0 1rem 3rem 2rem;
-  z-index: 1;
 }
 
 .item-txt__p {
@@ -27,7 +26,6 @@
 
 .item-txt__description {
   position: relative;
-  z-index: 2;
 }
 
 .item-txt__btn {

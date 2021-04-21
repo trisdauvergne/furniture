@@ -22,8 +22,6 @@ const Filtered = () => {
     filterFunction();
   }, []);
 
-  // console.log(window);
-
   if (!pieces) {
     return 'Loading...';
   }

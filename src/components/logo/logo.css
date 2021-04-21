@@ -50,7 +50,6 @@
   flex-direction: column;
   top: 3rem;
   text-align: right;
-  z-index: 1000;
 }
 
 @media only screen and (max-width: 768px) {
