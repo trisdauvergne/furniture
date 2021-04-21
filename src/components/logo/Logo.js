@@ -40,6 +40,10 @@ const ACCESS_TOKEN = process.env.REACT_APP_ACCESS_TOKEN;
 
 export const Logo = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [aboutBold, setAboutBold] = useState(false);
+  const [catalogBold, setCatalogBold] = useState(false);
+  const [commissionsBold, setCommissionsBold] = useState(false);
+  const [contactBold, setContactBold] = useState(false);
 
   const changeDropdown = () => {
     setDropdownOpen(!dropdownOpen);
@@ -47,23 +51,19 @@ export const Logo = () => {
   
   return (
     <nav className="nav nav--wide">
-      {/* <div className="nav-btns--left"> */}
-        <Link to="/about">
-          <button className="btn btn--about btn--lrg-screen">About</button>
-        </Link>
-        <Link to="/catalog">
-          <button className="btn btn--catalog btn--lrg-screen">Catalog</button>
-        </Link>
-      {/* </div> */}
+      <Link to="/about">
+        <button onClick={() => setAboutBold(true)} onMouseLeave={() => setAboutBold(false)} className={aboutBold ? "btn btn--about btn__bold btn--lrg-screen" : "btn btn--about btn--lrg-screen"}>About</button>
+      </Link>
+      <Link to="/catalog">
+        <button onClick={() => setCatalogBold(true)} onMouseLeave={() => setCatalogBold(false)} className={catalogBold ? "btn btn--catalog btn__bold btn--lrg-screen" : "btn btn--catalog btn--lrg-screen"}>Catalog</button>
+      </Link>
       <h1 className="nav__logo">Brand name</h1>
-      {/* <div className="nav-btns--right"> */}
-        <Link to="/commissions">
-          <button className="btn btn--commissions btn--lrg-screen">Commissions</button>
-        </Link>
-        <Link to="/contact">
-          <button className="btn btn--contact btn--lrg-screen">Contact</button>
-        </Link>
-      {/* </div> */}
+      <Link to="/commissions">
+        <button onClick={() => setCommissionsBold(true)} onMouseLeave={() => setCommissionsBold(false)} className={commissionsBold ?"btn btn__bold btn--commissions btn--lrg-screen" : "btn btn--commissions btn--lrg-screen"}>Commissions</button>
+      </Link>
+      <Link to="/contact">
+        <button onClick={() => setContactBold(true)} onMouseLeave={() => setContactBold(false)} className={contactBold ? "btn btn__bold btn--contact btn--lrg-screen" : "btn btn--contact btn--lrg-screen"}>Contact</button>
+      </Link>
       <button className={dropdownOpen ? 'btn nav__btn nav__btn--bold' : 'btn nav__btn'} onClick={changeDropdown}>Menu</button>
       <div className="nav__menu">
       {dropdownOpen && <>

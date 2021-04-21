@@ -33,6 +33,10 @@
   right: 150px;
 }
 
+.btn__bold {
+  font-weight: bolder;
+}
+
 .nav__btn {
   display: none;
 }
