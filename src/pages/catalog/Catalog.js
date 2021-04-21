@@ -15,7 +15,7 @@ const Catalog = () => {
   return (
     <section className="catalog">
       <div className="catalog__header">
-        <h3 className="catalog__header--h3">Catalog items</h3>
+        <h3 className="catalog__header--h3">All items</h3>
         <Filter pieces={pieces}/>
       </div>
       {pieces.map(piece => <Item key={uuidv4()} piece={piece}/>)}

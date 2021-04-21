@@ -64,7 +64,7 @@ export const Logo = () => {
       <Link to="/contact">
         <button onClick={() => setContactBold(true)} onMouseLeave={() => setContactBold(false)} className={contactBold ? "btn btn__bold btn--contact btn--lrg-screen" : "btn btn--contact btn--lrg-screen"}>Contact</button>
       </Link>
-      <button className={dropdownOpen ? 'btn nav__btn nav__btn--bold' : 'btn nav__btn'} onClick={changeDropdown}>Menu</button>
+      <button className={dropdownOpen ? 'btn nav__btn nav__btn--bold' : 'btn nav__btn'} onClick={changeDropdown} onMouseLeave={() => setDropdownOpen(false)}>Menu</button>
       <div className="nav__menu">
       {dropdownOpen && <>
         <Link to="/about">
