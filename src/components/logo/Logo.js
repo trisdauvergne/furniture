@@ -44,13 +44,43 @@ export const Logo = () => {
   const changeDropdown = () => {
     setDropdownOpen(!dropdownOpen);
   };
-
-  // something with window.addEventListener for hiding the modal when somewhere else is clicked
-
+  
   return (
-    <nav className="nav" onMouseLeave={() => setDropdownOpen(false)}>
+    <nav className="nav nav--wide">
+      {/* <div className="nav-btns--left"> */}
+        <Link to="/about">
+          <button className="btn btn--about btn--lrg-screen">About</button>
+        </Link>
+        <Link to="/catalog">
+          <button className="btn btn--catalog btn--lrg-screen">Catalog</button>
+        </Link>
+      {/* </div> */}
       <h1 className="nav__logo">Brand name</h1>
-      {!dropdownOpen && <button  className="btn nav__btn" onClick={changeDropdown}>Menu</button>}
+      {/* <div className="nav-btns--right"> */}
+        <Link to="/commissions">
+          <button className="btn btn--commissions btn--lrg-screen">Commissions</button>
+        </Link>
+        <Link to="/contact">
+          <button className="btn btn--contact btn--lrg-screen">Contact</button>
+        </Link>
+      {/* </div> */}
+      <button className={dropdownOpen ? 'btn nav__btn nav__btn--bold' : 'btn nav__btn'} onClick={changeDropdown}>Menu</button>
+      <div className="nav__menu">
+      {dropdownOpen && <>
+        <Link to="/about">
+          <button className="btn" onClick={changeDropdown}>About</button>
+        </Link>
+        <Link to="/catalog">
+          <button className="btn" onClick={changeDropdown}>Catalog</button>
+        </Link>
+        <Link to="/commissions">
+          <button className="btn" onClick={changeDropdown}>Commissions</button>
+        </Link>
+        <Link to="/contact">
+          <button className="btn" onClick={changeDropdown}>Contact</button>
+        </Link></>}
+      </div>
+      {/* {!dropdownOpen && <button  className="btn nav__btn" onClick={changeDropdown}>Menu</button>}
       <ModalDropdown open={dropdownOpen} onClose={() => setDropdownOpen(false)}>
         <div className="nav__menu">
           <Link to="/about">
@@ -66,7 +96,7 @@ export const Logo = () => {
             <button className="btn" onClick={changeDropdown}>Contact</button>
           </Link>
         </div>
-      </ModalDropdown>
+      </ModalDropdown> */}
     </nav>
   );
 };

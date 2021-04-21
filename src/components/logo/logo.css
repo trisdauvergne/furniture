@@ -3,23 +3,78 @@
   top: 0;
   display: flex;
   height: 4rem;
-  align-items: flex-end;
-  /* background-color: white; */
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .nav__logo {
-  font-size: 2.25rem;
-  margin-left: 1rem;
+  position: absolute;
+  margin: 0 2rem;
+}
+
+.btn--lrg-screen {
+  position: absolute;
+  top: 22px;
+}
+
+.btn--about {
+  left: 195px;
+}
+
+.btn--catalog {
+  left: 320px;
+}
+
+.btn--commissions {
+  right: 275px;
+}
+
+.btn--contact {
+  right: 150px;
 }
 
 .nav__btn {
-  position: fixed;
-  right: 0;
-  margin-right: 1rem;
-  padding-bottom: 5px;
+  display: none;
+}
+
+.nav__btn--bold {
+  font-weight: bold;
 }
 
 .nav__menu {
   display: flex;
   flex-direction: column;
+  top: 4rem;
+  text-align: right;
+  z-index: 1000;
+}
+
+@media only screen and (max-width: 768px) {
+  .nav {
+    align-items: center;
+  }
+
+  .nav__btn {
+    display: block;
+    margin-right: 1rem;
+    position: relative;
+    top: 6px;
+  }
+
+  .nav__logo {
+    margin-left: 1rem;
+    margin-right: auto;
+    font-size: 2.25rem;
+    position: relative;
+  }
+
+  .nav__menu {
+    position: fixed;
+    right: 0;
+    margin-right: 1rem;
+  }
+
+  .btn--lrg-screen {
+    display: none;
+  }
 }

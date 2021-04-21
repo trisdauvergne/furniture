@@ -21,7 +21,7 @@
 
 .dropdown-overlay {
   position: fixed;
-  width: 50%;
+  width: 10rem;
   top: 0;
   right: 0;
   bottom: 0;
