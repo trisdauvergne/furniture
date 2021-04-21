@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import { Logo, ItemsProvider } from './components/logo/Logo';
 import Filtered from './pages/filtered/Filtered';
 import About from './pages/about/About';
@@ -16,7 +16,8 @@ function App() {
         <div className="App">
           <Logo />
           <Switch>
-            <Route path="/about" component={About} />
+          <Route exact path="/"><Redirect to="/about" /></Route>
+            <Route path="/about" exact component={About} />
             <Route path="/catalog" exact component={Catalog} />
             <Route path={`/catalog/:tag`} component={Filtered} />
             <Route path="/commissions" component={Commission} />
