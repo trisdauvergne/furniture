@@ -44,6 +44,14 @@ a {
   outline: none;
 }
 
+.btn:hover {
+  font-weight: bold;
+}
+
+.btn:active {
+  font-weight: bold;
+}
+
 body {
   margin: auto;
   max-width: 1024px;

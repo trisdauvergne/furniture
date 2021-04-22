@@ -3,21 +3,23 @@
   top: 0;
   display: flex;
   height: 4rem;
-  align-items: center;
   justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
 }
 
 .nav__logo {
-  position: absolute;
-  margin: 0 2rem;
+  font-size: 2.4rem;
+  top: 10px;
+  left: 5px;
 }
 
-.btn--lrg-screen {
+/* .btn--lrg-screen {
   position: absolute;
   top: 22px;
-}
+} */
 
-.btn--about {
+/* .btn--about {
   left: 195px;
 }
 
@@ -31,7 +33,7 @@
 
 .btn--contact {
   right: 150px;
-}
+} */
 
 .btn__bold {
   font-weight: bolder;
@@ -45,33 +47,34 @@
   font-weight: bold;
 }
 
-.nav__menu {
-  display: flex;
-  flex-direction: column;
-  top: 3rem;
-  text-align: right;
-}
-
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 924px) {
   .nav {
-    align-items: center;
-  }
-
-  .nav__btn {
-    display: block;
-    margin-right: 1rem;
-    position: relative;
-    top: 6px;
+    max-width: 425px;
+    display: flex;
+    /* align-items: center; */
+    /* height: 3rem; */
   }
 
   .nav__logo {
-    margin-left: -1rem;
-    margin-right: auto;
+    position: fixed;
+    margin-left: 1rem;
+    left: 0;
     font-size: 2.25rem;
-    position: relative;
+  }
+  
+  .nav__btn {
+    display: block;
+    margin-right: 1rem;
+    position: fixed;
+    right: 0;
+    top: 1.7rem;
   }
 
   .nav__menu {
+    display: flex;
+    flex-direction: column;
+    top: 3rem;
+    text-align: right;
     position: fixed;
     right: 0;
     margin-right: 1rem;
