@@ -62,7 +62,6 @@ export const Logo = () => {
         <button onClick={() => setCatalogBold(true)} onMouseLeave={() => setCatalogBold(false)} className={catalogBold ? "btn btn--catalog btn__bold btn--lrg-screen" : "btn btn--catalog btn--lrg-screen"}>Catalog</button>
       </Link>
       <Link to="/"><h1 className="nav__logo">Brand name</h1></Link>
-      {/* <h1 className="nav__logo">Brand name</h1> */}
       <Link to="/commissions">
         <button onClick={() => setCommissionsBold(true)} onMouseLeave={() => setCommissionsBold(false)} className={commissionsBold ?"btn btn__bold btn--commissions btn--lrg-screen" : "btn btn--commissions btn--lrg-screen"}>Commissions</button>
       </Link>
