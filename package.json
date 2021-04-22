@@ -9,6 +9,7 @@
     "contentful": "^8.2.1",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
+    "emailjs-com": "^2.6.4",
     "express": "^4.17.1",
     "nodemailer": "^6.5.0",
     "react": "^17.0.2",
