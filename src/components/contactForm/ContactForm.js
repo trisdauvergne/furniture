@@ -5,9 +5,9 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("Sending...");
-    const { name, email, message } = e.target.elements;
+    const { sender, email, message } = e.target.elements;
     let details = {
-      name: name.value,
+      sender: sender.value,
       email: email.value,
       message: message.value,
     };
