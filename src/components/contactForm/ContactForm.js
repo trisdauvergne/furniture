@@ -1,43 +1,42 @@
-import React, { useState } from "react";
+import React from "react";
+import emailjs from 'emailjs-com';
+import './contactform.css';
+
+require('dotenv').config();
+
+const USER_ID = process.env.REACT_APP_EMAILJS_ID;
+const SERVICE_ID = process.env.REACT_APP_SERVICE_ID;
 
 const ContactForm = () => {
-  const [status, setStatus] = useState("Submit");
-  const handleSubmit = async (e) => {
+
+  const sendEmail = (e) => {
     e.preventDefault();
-    setStatus("Sending...");
-    const { sender, email, message } = e.target.elements;
-    let details = {
-      sender: sender.value,
-      email: email.value,
-      message: message.value,
-    };
-    let response = await fetch("http://localhost:5000/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(details),
-    });
-    setStatus("Submit");
-    let result = await response.json();
-    alert(result.status);
+
+    emailjs.sendForm(SERVICE_ID, 'template_b27tf79', e.target, USER_ID)
+      .then((result) => {
+          alert('Message Sent, I\'ll get back to you shortly', result.text);
+      }, (error) => {
+          alert('An error occurred, please try again', error.text);
+      });
+      e.target.reset();
   };
+
   return (
-    <section className="form">
-      <form onSubmit={handleSubmit}>
-        <div className="form--input">
-          <label htmlFor="sender">Name:</label>
-          <input type="text" id="sender" required />
+    <section className="form-section">
+      <form className="form" onSubmit={sendEmail}>
+        <div className="form__div">
+          <p>Name:</p>
+          <input type="text" className="form__input" name="name" placeholder="Your name..." required />
         </div>
-        <div className="form--input">
-          <label htmlFor="email">Email:</label>
-          <input type="email" id="email" required />
+        <div className="form__div">
+          <p>Email:</p>
+          <input className="form__input" type="email" name="email" placeholder="Your email address..." required />
         </div>
-        <div className="form--input">
-          <label htmlFor="message">Message:</label>
-          <textarea id="message" required />
+        <div className="form__div">
+          <p>Message:</p>
+          <textarea type="text" name="message" placeholder="Your message..." className="form__input"required />
         </div>
-        <button type="submit">{status}</button>
+        <button className="btn btn--submit" type="submit">Send</button>
       </form>
     </section>
   );

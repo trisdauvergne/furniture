@@ -48,10 +48,6 @@ export const Logo = () => {
   const changeDropdown = () => {
     setDropdownOpen(!dropdownOpen);
   };
-
-  const test = () => {
-    console.log('checking');
-  }
   
   return (
     <nav className="nav nav--wide">
