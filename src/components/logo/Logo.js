@@ -51,19 +51,21 @@ export const Logo = () => {
   
   return (
     <nav className="nav nav--wide">
-      <Link to="/about">
-        <button onClick={() => setAboutBold(true)} onMouseLeave={() => setAboutBold(false)} className={aboutBold ? "btn btn--about btn__bold btn--lrg-screen" : "btn btn--about btn--lrg-screen"}>About</button>
-      </Link>
-      <Link to="/catalog">
-        <button onClick={() => setCatalogBold(true)} onMouseLeave={() => setCatalogBold(false)} className={catalogBold ? "btn btn--catalog btn__bold btn--lrg-screen" : "btn btn--catalog btn--lrg-screen"}>Catalog</button>
-      </Link>
       <Link to="/"><h1 className="nav__logo">Brand name</h1></Link>
-      <Link to="/commissions">
-        <button onClick={() => setCommissionsBold(true)} onMouseLeave={() => setCommissionsBold(false)} className={commissionsBold ?"btn btn__bold btn--commissions btn--lrg-screen" : "btn btn--commissions btn--lrg-screen"}>Commissions</button>
-      </Link>
-      <Link to="/contact">
-        <button onClick={() => setContactBold(true)} onMouseLeave={() => setContactBold(false)} className={contactBold ? "btn btn__bold btn--contact btn--lrg-screen" : "btn btn--contact btn--lrg-screen"}>Contact</button>
-      </Link>
+      <div className="nav--wide__btns">
+        <Link to="/about">
+          <button onClick={() => setAboutBold(true)} onMouseLeave={() => setAboutBold(false)} className={aboutBold ? "btn btn--about btn__bold btn--lrg-screen" : "btn btn--about btn--lrg-screen"}>About</button>
+        </Link>
+        <Link to="/catalog">
+          <button onClick={() => setCatalogBold(true)} onMouseLeave={() => setCatalogBold(false)} className={catalogBold ? "btn btn--catalog btn__bold btn--lrg-screen" : "btn btn--catalog btn--lrg-screen"}>Catalog</button>
+        </Link>
+        <Link to="/commissions">
+          <button onClick={() => setCommissionsBold(true)} onMouseLeave={() => setCommissionsBold(false)} className={commissionsBold ?"btn btn__bold btn--commissions btn--lrg-screen" : "btn btn--commissions btn--lrg-screen"}>Commissions</button>
+        </Link>
+        <Link to="/contact">
+          <button onClick={() => setContactBold(true)} onMouseLeave={() => setContactBold(false)} className={contactBold ? "btn btn__bold btn--contact btn--lrg-screen" : "btn btn--contact btn--lrg-screen"}>Contact</button>
+        </Link>
+      </div>
       {dropdownOpen ? <button onClick={changeDropdown} className='btn nav__btn nav__btn--bold'>Close</button> : <button className="btn nav__btn" onClick={changeDropdown}>Menu</button>}
       {dropdownOpen &&
       <div className="nav__menu">

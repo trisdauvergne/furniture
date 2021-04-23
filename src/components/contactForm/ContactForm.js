@@ -23,6 +23,7 @@ const ContactForm = () => {
 
   return (
     <section className="form-section">
+      <p className="form__intro">If you have an idea that you want to discuss with <strong>brand name</strong> send us a message below.</p>
       <form className="form" onSubmit={sendEmail}>
         <div className="form__div">
           <p>Name:</p>
